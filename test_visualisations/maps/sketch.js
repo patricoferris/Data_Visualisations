@@ -56,7 +56,9 @@ function setup(){
 
   for(let c in countriesData) {
     let hue = ((countriesData[c]['gdp'] - minGDP)/(maxGDP - minGDP)) * 120;
-    let s = new Sphere(countriesData[c]['lat'], countriesData[c]['long'], 15, hue, c, countriesData[c]['gdp']);
+    let r = ((countriesData[c]['gdp'] - minGDP)/(maxGDP - minGDP)) * 100 + 10;
+    console.log(r);
+    let s = new Sphere(countriesData[c]['lat'], countriesData[c]['long'], r, hue, c, countriesData[c]['gdp']);
     spheres.push(s);
   }
 
