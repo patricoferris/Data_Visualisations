@@ -1,22 +1,25 @@
 let map;
 let canvas;
-let dataTable;
-let longLat;
+
 let spheres = [];
 let paraInfo;
 let toggleButton;
 
 let perCapitaFlag = true;
 
+// Minimum and Maximum GDPs and GDP_PCs
 let maxGDP = 0;
 let minGDP = 10000000000;
-
 let maxPC = 0;
 let minPC = 10000000000;
 
+//Data Structures holding the processed data and data loaded in from local and online files
 let processedData;
+let dataTable;
+let longLat;
 let countriesData = {};
 
+//Mappa variables and setup
 const mappa = new Mappa('Leaflet');
 const options = {
   lat: 30,
@@ -26,6 +29,7 @@ const options = {
 }
 
 function preload() {
+  //Loading in essential data
   dataTable = loadTable("gdp_data_2016.csv", "csv", "header");
   longLat = loadTable("https://gist.githubusercontent.com/tadast/8827699/raw/7255fdfbf292c592b75cf5f7a19c16ea59735f74/countries_codes_and_coordinates.csv", "csv", "header");
   populationData = loadTable("population_2016.csv", "csv", "header");
@@ -33,6 +37,7 @@ function preload() {
 }
 
 function setup(){
+  //Canvas setup and DOM manipulation
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   map = mappa.tileMap(options);
   map.overlay(canvas)
@@ -77,12 +82,13 @@ function setup(){
   for(let c in countriesData) {
     let hue = ((countriesData[c]['gdp'] - minGDP)/(maxGDP - minGDP)) * 120;
     let r = ((countriesData[c]['gdp'] - minGDP)/(maxGDP - minGDP)) * 100 + 10;
-    let s = new Sphere(countriesData[c]['lat'], countriesData[c]['long'], r, hue, c, countriesData[c]['gdp'], countriesData[c]['population']);
+    let s = new Circle(countriesData[c]['lat'], countriesData[c]['long'], r, hue, c, countriesData[c]['gdp'], countriesData[c]['population']);
     spheres.push(s);
   }
 
 }
 
+//Currenty not working - could be something to do with resizing the map and not the canvas
 function windowResized() {
   canvas = resizeCanvas(window.innerWidth, window.innerHeight);
 }
@@ -108,7 +114,8 @@ function draw(){
   }
 }
 
-class Sphere {
+//Circle class with clicked and show methods
+class Circle {
   constructor(lat, long, r, hue, name, value, population) {
     this.lat = lat;
     this.long = long;
