@@ -6,6 +6,7 @@ The easiest way to achieve this is using the python commands:
 
 ## Data Acknowledgements:
 gdp_data.csv is from "https://datahub.io/anuveyatsu/gdp#javascript"
+population data is from "https://raw.githubusercontent.com/datasets/population/master/data/population.csv"
 
 ## Current Visualisation:
 ![Visuals](visual.png)
