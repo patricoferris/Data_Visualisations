@@ -10,3 +10,5 @@ population data is from "https://raw.githubusercontent.com/datasets/population/m
 
 ## Current Visualisation:
 ![Visuals](visual.png)
+![VisualsPC](pc_visual.png)
+
