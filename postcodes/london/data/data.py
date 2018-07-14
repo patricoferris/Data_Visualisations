@@ -36,7 +36,10 @@ def addToHospitals(url, dict):
     for div in divs:
         for hospital in div.findChildren('span', class_='larger'):
             text = hospital.parent.next_sibling.next_sibling.split('  ')
-            dict[hospital.string] = text[1]
+            if text[1] in postcode_longlat:
+                dict[hospital.string] = postcode_longlat[text[1]]
+            else:
+                print(text[1])
 
 for i in range(1, 6):
     if i != 1:
@@ -47,3 +50,19 @@ for i in range(1, 6):
         addToHospitals(hospital_url, hospital_dict)
 
 print(hospital_dict)
+
+with open('hospitals.csv', 'w') as csvFile:
+    csvWriter = csv.writer(csvFile)
+    csvWriter.writerow(['Hospital_Name', 'Latitude', 'Longitude'])
+    for Hospital_Name in hospital_dict:
+        lat = hospital_dict[Hospital_Name].lat
+        long = hospital_dict[Hospital_Name].long
+        csvWriter.writerow([Hospital_Name, lat, long])
+
+#with open('postcode.csv', 'w') as csvFile:
+#    csvWriter = csv.writer(csvFile)
+#    csvWriter.writerow(['Postcode', 'Latitude', 'Longitude'])
+#    for postcode in postcode_longlat:
+#        lat = postcode_longlat[postcode].lat
+#        long = postcode_longlat[postcode].long
+#        csvWriter.writerow([postcode, lat, long])
