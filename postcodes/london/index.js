@@ -37,7 +37,7 @@ d3.csv("/data/hospitals.csv", (error, data) => {
 
   function getPathToClosest(ll) {
     data.forEach((d) => {
-      let url = 'https://www.google.co.uk/maps/dir/' + ll +'/' + d['Latitude'] + ',' + d['Longitude'];
+
       console.log(url);
     })
   }
