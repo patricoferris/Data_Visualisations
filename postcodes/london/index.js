@@ -14,6 +14,7 @@ d3.csv("/data/hospitals.csv", (error, data) => {
     d.latlng = new L.LatLng(d['Latitude'], d['Longitude']);
   });
 
+
   let feature = g.selectAll("circle")
     .data(data)
     .enter().append("circle")
@@ -22,14 +23,26 @@ d3.csv("/data/hospitals.csv", (error, data) => {
     .style("fill", "red")
     .attr("r", 5);
 
-    function drawAndUpdateCircles() {
-      feature.attr("transform",
-          function(d) {
-              var layerPoint = map.latLngToLayerPoint(d.latlng);
-              return "translate("+ layerPoint.x +","+ layerPoint.y +")";
-          }
-      );
-    }
-    drawAndUpdateCircles();
-    map.on("moveend", drawAndUpdateCircles);
+  let lines = g.selectAll()
+
+  function drawAndUpdateCircles() {
+    feature.attr("transform",
+        function(d) {
+            var layerPoint = map.latLngToLayerPoint(d.latlng);
+            return "translate("+ layerPoint.x +","+ layerPoint.y +")";
+        }
+    );
+  }
+
+
+  function getPathToClosest(ll) {
+    data.forEach((d) => {
+      let url = 'https://www.google.co.uk/maps/dir/' + ll +'/' + d['Latitude'] + ',' + d['Longitude'];
+      console.log(url);
+    })
+  }
+
+  drawAndUpdateCircles();
+  getPathToClosest('51.520839,-0.151346');
+  map.on("moveend", drawAndUpdateCircles);
 });
