@@ -26,11 +26,10 @@ d3.csv("/data/hospitals.csv", (error, data) => {
   let lines = g.selectAll()
 
   function drawAndUpdateCircles() {
-    feature.attr("transform",
-        function(d) {
-            var layerPoint = map.latLngToLayerPoint(d.latlng);
-            return "translate("+ layerPoint.x +","+ layerPoint.y +")";
-        }
+    feature.attr("transform", function(d) {
+        let layerPoint = map.latLngToLayerPoint(d.latlng);
+        return "translate("+ layerPoint.x +","+ layerPoint.y +")scale()";
+      }
     );
   }
 
