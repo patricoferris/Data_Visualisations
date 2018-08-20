@@ -2,7 +2,7 @@
 ----------------------------------
 JavaScript is very like Python in many ways and Java in many ways. Like Python it is dynamically typed. You can't just type a variable name though you have to add one of three keywords to the initialisation.
 
-###Some Basics
+### Some Basics
 
 ```javascript
 //This is a comment in JavaScript
@@ -30,7 +30,7 @@ function sum(a, b) {
 console.log(sum(3, 4)); // 7 in the console - the logging statement is the same as print - great for debugging
 ```
 
-### The For-Loop
+### The For-Loop
 
 For loops are a little more verbose in Javascript than Python (there are actually other ways of working around this). This format [below] is by far the most used and also easily understood.
 
@@ -137,4 +137,4 @@ Javascript is the language used when you want to create an interactive and dynam
 }
 ```
 
-I know that's quite a lot to take in. The head tag is for declaring things that we're not actually going to display. We link out styles in the head tag for example. The body tag is for anything we're going to display. We create a 'div' element which is a division of the page (automatically it will fill the entire width but have zero height so we change that in the styles.) We load our javascript in last - the HTML is parsed linearly so we want to have all of our elements loaded before we execute our javascript in case it makes use of anything in the HTML. 
+I know that's quite a lot to take in. The head tag is for declaring things that we're not actually going to display. We link out styles in the head tag for example. The body tag is for anything we're going to display. We create a 'div' element which is a division of the page (automatically it will fill the entire width but have zero height so we change that in the styles.) We load our javascript in last - the HTML is parsed linearly so we want to have all of our elements loaded before we execute our javascript in case it makes use of anything in the HTML.
