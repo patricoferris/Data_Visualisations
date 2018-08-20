@@ -2,6 +2,8 @@
 ----------------------------------
 JavaScript is very like Python in many ways and Java in many ways. Like Python it is dynamically typed. You can't just type a variable name though you have to add one of three keywords to the initialisation.
 
+###Some Basics
+
 ```javascript
 //This is a comment in JavaScript
 
@@ -12,6 +14,8 @@ const myConstant = 42;
 // 'let' is a fairly new addition to the language - it is block scopes i.e. it is related to any { } that surround it
 let myOtherVar = true;
 ```
+
+### Functions
 
 Functions in JavaScript are very similar to those in python, they have a name, some arguments and then curly braces to enclose the function. You may have already noticed as well that in JavaScript we end statements with semi-colons, sometimes code will still run without them but probably incorrectly so definitely use them! Finding where you've forgotten them will become the greatest task you've every encountered... enjoy...
 
@@ -26,6 +30,8 @@ function sum(a, b) {
 console.log(sum(3, 4)); // 7 in the console - the logging statement is the same as print - great for debugging
 ```
 
+### The For-Loop
+
 For loops are a little more verbose in Javascript than Python (there are actually other ways of working around this). This format [below] is by far the most used and also easily understood.
 
 ```javascript  
@@ -39,6 +45,8 @@ for(let i = 0; i < 10; i++) {
 console.log(sum);
 ```
 
+### Arrays
+
 Arrays are very similar to Python as well, just some of the method words are different.
 
 ```javascript
@@ -51,6 +59,8 @@ for(let i = 0; i < 10; i += 2) {
 console.log(arr);
 console.log(arr.length);
 ```
+
+### Objects and Classes
 
 Finally we have javascript objects (where it seems a lot more like Java and other OOP languages). An object is simply a data-structure with a set of properties. These properties are key-value pairs. There are a couple of ways of creating objects, but the one I think is probably most intuitive and easy to understand and read, is using the 'javascript object notation' format (JSON).
 
@@ -103,3 +113,28 @@ I could go on at this point, but I think we want to look at some of the data vis
 - [MDN](https://developer.mozilla.org/en-US/) - the go-to guide for all things web-related in terms of documentation and explanations
 - [OOP](https://stackify.com/oop-concept-inheritance/?utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F) - some of the major concepts in OOP like inheritance, immutability, encapsulation, code-reuse and modularity
 - [Javascript](https://www.youtube.com/watch?v=fju9ii8YsGs) - Derek Banas does great, comprehensive programming videos
+
+## D3 and Data Visualisation
+---------------------------------
+
+Javascript is the language used when you want to create an interactive and dynamic 'thing' (website) in the browser. There are three pillars of site construction - HTML, CSS and Javascript. HTML is a mark-up language with the use of tags (like XML if you have come across it). CSS is the styling of the content (colours, fonts etc.). For now, we'll just focus on the main HTML tags we need to get our visualisations displaying.
+
+```html
+<head>
+  <link href='styles.css'/>
+</head>
+<body>
+  <div id='data-displayer'></div>
+  <script src='index.js'></script>
+</body>
+```
+
+```css
+#data-displayer {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+```
+
+I know that's quite a lot to take in. The head tag is for declaring things that we're not actually going to display. We link out styles in the head tag for example. The body tag is for anything we're going to display. We create a 'div' element which is a division of the page (automatically it will fill the entire width but have zero height so we change that in the styles.) We load our javascript in last - the HTML is parsed linearly so we want to have all of our elements loaded before we execute our javascript in case it makes use of anything in the HTML. 
