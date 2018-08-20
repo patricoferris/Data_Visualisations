@@ -138,3 +138,10 @@ Javascript is the language used when you want to create an interactive and dynam
 ```
 
 I know that's quite a lot to take in. The head tag is for declaring things that we're not actually going to display. We link out styles in the head tag for example. The body tag is for anything we're going to display. We create a 'div' element which is a division of the page (automatically it will fill the entire width but have zero height so we change that in the styles.) We load our javascript in last - the HTML is parsed linearly so we want to have all of our elements loaded before we execute our javascript in case it makes use of anything in the HTML.
+
+Let's do some data visualisations then: there are three main parts to data visualisation.
+1. Data Fetching
+2. Data Processing
+3. Data Visualising
+
+Often the first two are the hardest and cause the most head-scratching. Our data is coming from [here]() and we're going to compare GDPs from around the world. We can use [this](https://github.com/factbook/factbook.json) json wrapper to query the data easily. It is an API (Application Programming Interface), which is essentially a nice abstraction for us to use to get data easily without worrying too much about the underlying mechanisms. 
