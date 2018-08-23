@@ -83,7 +83,7 @@ JSON notation is only used for data though, it offers no functionality or really
 An instance of a Class is an object.
 
 ```javascript
-Class Dog {
+class Dog {
   constructor(name, age, type) {
     this.name = name;
     this.age = age;
