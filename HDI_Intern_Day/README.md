@@ -60,7 +60,7 @@ console.log(arr);
 console.log(arr.length);
 ```
 
-### Objects and Classes
+### Objects and Classes
 
 Finally we have javascript objects (where it seems a lot more like Java and other OOP languages). An object is simply a data-structure with a set of properties. These properties are key-value pairs. There are a couple of ways of creating objects, but the one I think is probably most intuitive and easy to understand and read, is using the 'javascript object notation' format (JSON).
 
@@ -114,7 +114,7 @@ I could go on at this point, but I think we want to look at some of the data vis
 - [OOP](https://stackify.com/oop-concept-inheritance/?utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F) - some of the major concepts in OOP like inheritance, immutability, encapsulation, code-reuse and modularity
 - [Javascript](https://www.youtube.com/watch?v=fju9ii8YsGs) - Derek Banas does great, comprehensive programming videos
 
-## D3 and Data Visualisation
+## D3 and Data Visualisation
 ---------------------------------
 
 Javascript is the language used when you want to create an interactive and dynamic 'thing' (website) in the browser. There are three pillars of site construction - HTML, CSS and Javascript. HTML is a mark-up language with the use of tags (like XML if you have come across it). CSS is the styling of the content (colours, fonts etc.). For now, we'll just focus on the main HTML tags we need to get our visualisations displaying.
